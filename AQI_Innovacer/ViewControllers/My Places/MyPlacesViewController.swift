@@ -23,7 +23,6 @@ class MyPlacesViewController: UIViewController {
     }()
     
     
-    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.topItem?.title = "AQI Indexes"
@@ -64,35 +63,36 @@ class MyPlacesViewController: UIViewController {
     }
     
     @objc func updateAQI() -> Void {
-//        networkTasks.removeAll()
-//        for city in myCities {
-//            if let url = URL(string: Util.getMesurementsURL(forCity: city.cityName)) {
-//                weak var weakSelf = self
-//                let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//                    if let data = data {
-//                        if let value = Util.getPM25Value(fromData: data), let cityName = Util.getCityName(fromData: data) {
-//                            let aqi = Util.calculateAQI(pm25: value)
-//                            if let weakSelf = weakSelf {
-//                                DispatchQueue.main.async {
-//                                    weakSelf.setAQIToCity(aqi: aqi, cityName: cityName)
-//                                    weakSelf.tableView.reloadData()
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//                task.resume()
-//                networkTasks.append(task)
-//            }
-//        }
+        networkTasks.removeAll()
+        for city in myCities {
+            if let url = URL(string: Util.getMesurementsURL(forCity: city.cityName)) {
+                weak var weakSelf = self
+                let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                    if let data = data {
+                        if let value = Util.getPM25Value(fromData: data), let cityName = Util.getCityName(fromData: data) {
+                            let aqi = Util.calculateAQI(pm25: value)
+                            if let weakSelf = weakSelf {
+                                DispatchQueue.main.async {
+                                    weakSelf.setAQIToCity(aqi: aqi, cityName: cityName)
+                                    weakSelf.tableView.reloadData()
+                                }
+                            }
+                        }
+                    }
+                }
+                task.resume()
+                networkTasks.append(task)
+            }
+        }
     }
     
-    func setAQIToCity(aqi: Int, cityName: String) {
-//        for (index, city) in myCities.enumerated() {
-//            if city.cityName == cityName {
-//                myCities[index].setAQIIndex(value: aqi)
-//            }
-//        }
+    func setAQIToCity(aqi: Int16, cityName: String) {
+        for city in myCities {
+            if city.cityName == cityName {
+                city.aqiIndex = aqi
+            }
+        }
+        PersistanceManager.shared.saveContext()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -103,6 +103,7 @@ class MyPlacesViewController: UIViewController {
         for task in networkTasks {
             task.cancel()
         }
+        networkTasks.removeAll()
     }
 
 }
@@ -118,7 +119,8 @@ extension MyPlacesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         if let cell = cell as? MyPlaceTableViewCell {
             cell.selectionStyle = .none
-            cell.updateView(withCity: myCities[indexPath.row])
+            cell.city = myCities[indexPath.row]
+            cell.updateView()
         }
         return cell
     }

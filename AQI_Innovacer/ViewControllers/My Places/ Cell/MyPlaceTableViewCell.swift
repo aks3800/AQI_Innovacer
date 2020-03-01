@@ -10,6 +10,8 @@ import UIKit
 
 class MyPlaceTableViewCell: UITableViewCell {
     
+    var city: City?
+    
     let cityLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -59,12 +61,14 @@ class MyPlaceTableViewCell: UITableViewCell {
         ])
     }
     
-    func updateView(withCity city: City) {
-        cityLabel.text = city.cityName
-        if city.aqiIndex > 0 {
-            aqiLabel.text = "\(city.aqiIndex)"
-        } else {
-            aqiLabel.text = "NA"
+    func updateView() {
+        if let city = city {
+            cityLabel.text = city.cityName
+            if city.aqiIndex > 0 {
+                aqiLabel.text = "\(city.aqiIndex)"
+            } else {
+                aqiLabel.text = "NA"
+            }
         }
     }
 

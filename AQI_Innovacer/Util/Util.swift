@@ -35,14 +35,14 @@ struct Util {
         return "\(Constants.mesurementsURL)?city=\(city)&parameter=pm25&limit=1"
     }
     
-    static func getPM25Value(fromData data: Data) -> Int? {
+    static func getPM25Value(fromData data: Data) -> Double? {
         guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else { return nil }
         if let dict = json as? [String: Any] {
             if let results = dict["results"] as? [[String: Any]] {
                 if results.count > 0 {
                     if let mesurements = results[0]["measurements"] as? [[String: Any]] {
                         if mesurements.count > 0 {
-                            if let value = mesurements[0]["value"] as? Int {
+                            if let value = mesurements[0]["value"] as? Double {
                                 return value
                             }
                         }
@@ -67,19 +67,19 @@ struct Util {
         return nil
     }
     
-    static func calculateAQI(pm25 pm25Value: Int) -> Int {
+    static func calculateAQI(pm25 pm25Value: Double) -> Int16 {
         if pm25Value <= 30 {
-            return Int(round(Double(pm25Value) * 50 / 30))
+            return Int16(round(Double(pm25Value) * 50 / 30))
         } else if pm25Value > 30 && pm25Value <= 60 {
-            return Int(round(50 + Double(pm25Value - 30) * 50 / 30))
+            return Int16(round(50 + Double(pm25Value - 30) * 50 / 30))
         } else if pm25Value > 60 && pm25Value <= 90 {
-            return Int(round(100 + Double(pm25Value - 60) * 100 / 30))
+            return Int16(round(100 + Double(pm25Value - 60) * 100 / 30))
         } else if pm25Value > 90 && pm25Value <= 120 {
-            return Int(round(200 + Double(pm25Value - 90) * 100 / 30))
+            return Int16(round(200 + Double(pm25Value - 90) * 100 / 30))
         } else if pm25Value > 120 && pm25Value <= 250 {
-            return Int(round(300 + Double(pm25Value - 120) * 100 / 130))
+            return Int16(round(300 + Double(pm25Value - 120) * 100 / 130))
         } else {
-            return Int(round(400 + Double(pm25Value - 250) * 100 / 130))
+            return Int16(round(400 + Double(pm25Value - 250) * 100 / 130))
         }
     }
     

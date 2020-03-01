@@ -19,6 +19,7 @@
 		02956602240B9BC200549102 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02956601240B9BC200549102 /* PersistanceManager.swift */; };
 		02956605240B9E9500549102 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02956603240B9E9500549102 /* City+CoreDataClass.swift */; };
 		02956606240B9E9500549102 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02956604240B9E9500549102 /* City+CoreDataProperties.swift */; };
+		02956609240BA70000549102 /* MyPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02956608240BA70000549102 /* MyPlaceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		02956601240B9BC200549102 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		02956603240B9E9500549102 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		02956604240B9E9500549102 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		02956608240BA70000549102 /* MyPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlaceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		029565F7240B9A8200549102 /* My Places */ = {
 			isa = PBXGroup;
 			children = (
+				02956607240BA6D600549102 /*  Cell */,
 				029565F9240B9A9F00549102 /* MyPlacesViewController.swift */,
 			);
 			path = "My Places";
@@ -123,6 +126,14 @@
 				029565FB240B9AAC00549102 /* AllPlacesViewController.swift */,
 			);
 			path = "All Places";
+			sourceTree = "<group>";
+		};
+		02956607240BA6D600549102 /*  Cell */ = {
+			isa = PBXGroup;
+			children = (
+				02956608240BA70000549102 /* MyPlaceTableViewCell.swift */,
+			);
+			path = " Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02956609240BA70000549102 /* MyPlaceTableViewCell.swift in Sources */,
 				02956606240B9E9500549102 /* City+CoreDataProperties.swift in Sources */,
 				02956605240B9E9500549102 /* City+CoreDataClass.swift in Sources */,
 				029565E8240B99F300549102 /* AQI_Innovacer.xcdatamodeld in Sources */,

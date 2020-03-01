@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		029565DE240B99F300549102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029565DD240B99F300549102 /* AppDelegate.swift */; };
 		029565E0240B99F300549102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029565DF240B99F300549102 /* SceneDelegate.swift */; };
-		029565E2240B99F300549102 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029565E1240B99F300549102 /* ViewController.swift */; };
-		029565E5240B99F300549102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029565E3240B99F300549102 /* Main.storyboard */; };
 		029565E8240B99F300549102 /* AQI_Innovacer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 029565E6240B99F300549102 /* AQI_Innovacer.xcdatamodeld */; };
 		029565EA240B99F400549102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029565E9240B99F400549102 /* Assets.xcassets */; };
 		029565ED240B99F400549102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029565EB240B99F400549102 /* LaunchScreen.storyboard */; };
+		029565FA240B9A9F00549102 /* MyPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029565F9240B9A9F00549102 /* MyPlacesViewController.swift */; };
+		029565FC240B9AAC00549102 /* AllPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029565FB240B9AAC00549102 /* AllPlacesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		029565DA240B99F300549102 /* AQI_Innovacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AQI_Innovacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029565DD240B99F300549102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029565DF240B99F300549102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		029565E1240B99F300549102 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		029565E4240B99F300549102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		029565E7240B99F300549102 /* AQI_Innovacer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AQI_Innovacer.xcdatamodel; sourceTree = "<group>"; };
 		029565E9240B99F400549102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		029565EC240B99F400549102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		029565EE240B99F400549102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		029565F9240B9A9F00549102 /* MyPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesViewController.swift; sourceTree = "<group>"; };
+		029565FB240B9AAC00549102 /* AllPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlacesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +58,56 @@
 		029565DC240B99F300549102 /* AQI_Innovacer */ = {
 			isa = PBXGroup;
 			children = (
+				029565F6240B9A7900549102 /* ViewControllers */,
+				029565F5240B9A7400549102 /* Models */,
+				029565F4240B9A6B00549102 /* Util */,
 				029565DD240B99F300549102 /* AppDelegate.swift */,
 				029565DF240B99F300549102 /* SceneDelegate.swift */,
-				029565E1240B99F300549102 /* ViewController.swift */,
-				029565E3240B99F300549102 /* Main.storyboard */,
 				029565E9240B99F400549102 /* Assets.xcassets */,
 				029565EB240B99F400549102 /* LaunchScreen.storyboard */,
 				029565EE240B99F400549102 /* Info.plist */,
 				029565E6240B99F300549102 /* AQI_Innovacer.xcdatamodeld */,
 			);
 			path = AQI_Innovacer;
+			sourceTree = "<group>";
+		};
+		029565F4240B9A6B00549102 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		029565F5240B9A7400549102 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		029565F6240B9A7900549102 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				029565F8240B9A8900549102 /* All Places */,
+				029565F7240B9A8200549102 /* My Places */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		029565F7240B9A8200549102 /* My Places */ = {
+			isa = PBXGroup;
+			children = (
+				029565F9240B9A9F00549102 /* MyPlacesViewController.swift */,
+			);
+			path = "My Places";
+			sourceTree = "<group>";
+		};
+		029565F8240B9A8900549102 /* All Places */ = {
+			isa = PBXGroup;
+			children = (
+				029565FB240B9AAC00549102 /* AllPlacesViewController.swift */,
+			);
+			path = "All Places";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +170,6 @@
 			files = (
 				029565ED240B99F400549102 /* LaunchScreen.storyboard in Resources */,
 				029565EA240B99F400549102 /* Assets.xcassets in Resources */,
-				029565E5240B99F300549102 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				029565E2240B99F300549102 /* ViewController.swift in Sources */,
 				029565E8240B99F300549102 /* AQI_Innovacer.xcdatamodeld in Sources */,
+				029565FA240B9A9F00549102 /* MyPlacesViewController.swift in Sources */,
 				029565DE240B99F300549102 /* AppDelegate.swift in Sources */,
+				029565FC240B9AAC00549102 /* AllPlacesViewController.swift in Sources */,
 				029565E0240B99F300549102 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,14 +191,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		029565E3240B99F300549102 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				029565E4240B99F300549102 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		029565EB240B99F400549102 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -14,6 +14,11 @@
 		029565ED240B99F400549102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029565EB240B99F400549102 /* LaunchScreen.storyboard */; };
 		029565FA240B9A9F00549102 /* MyPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029565F9240B9A9F00549102 /* MyPlacesViewController.swift */; };
 		029565FC240B9AAC00549102 /* AllPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029565FB240B9AAC00549102 /* AllPlacesViewController.swift */; };
+		029565FE240B9BA800549102 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029565FD240B9BA800549102 /* Constants.swift */; };
+		02956600240B9BB100549102 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029565FF240B9BB100549102 /* Util.swift */; };
+		02956602240B9BC200549102 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02956601240B9BC200549102 /* PersistanceManager.swift */; };
+		02956605240B9E9500549102 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02956603240B9E9500549102 /* City+CoreDataClass.swift */; };
+		02956606240B9E9500549102 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02956604240B9E9500549102 /* City+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		029565EE240B99F400549102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029565F9240B9A9F00549102 /* MyPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesViewController.swift; sourceTree = "<group>"; };
 		029565FB240B9AAC00549102 /* AllPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlacesViewController.swift; sourceTree = "<group>"; };
+		029565FD240B9BA800549102 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		029565FF240B9BB100549102 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		02956601240B9BC200549102 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		02956603240B9E9500549102 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		02956604240B9E9500549102 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,9 @@
 		029565F4240B9A6B00549102 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				029565FD240B9BA800549102 /* Constants.swift */,
+				029565FF240B9BB100549102 /* Util.swift */,
+				02956601240B9BC200549102 /* PersistanceManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -81,6 +94,8 @@
 		029565F5240B9A7400549102 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				02956603240B9E9500549102 /* City+CoreDataClass.swift */,
+				02956604240B9E9500549102 /* City+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,11 +195,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02956606240B9E9500549102 /* City+CoreDataProperties.swift in Sources */,
+				02956605240B9E9500549102 /* City+CoreDataClass.swift in Sources */,
 				029565E8240B99F300549102 /* AQI_Innovacer.xcdatamodeld in Sources */,
 				029565FA240B9A9F00549102 /* MyPlacesViewController.swift in Sources */,
 				029565DE240B99F300549102 /* AppDelegate.swift in Sources */,
 				029565FC240B9AAC00549102 /* AllPlacesViewController.swift in Sources */,
+				02956600240B9BB100549102 /* Util.swift in Sources */,
 				029565E0240B99F300549102 /* SceneDelegate.swift in Sources */,
+				029565FE240B9BA800549102 /* Constants.swift in Sources */,
+				02956602240B9BC200549102 /* PersistanceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

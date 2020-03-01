@@ -19,9 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-//        if !Util.isAllCitiesDataInUserDefaults() {
-//            Util.setAllCities(citiesData: Constants.allCities)
-//        }
+        if !Util.isCitiesDataAvailable() {
+            Util.saveAllDefaultCities(citiesData: Constants.allCities)
+        }
         
         let tabBarController = UITabBarController()
         let myPlacesViewController = UINavigationController(rootViewController: MyPlacesViewController())
@@ -65,7 +65,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        //(UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        PersistanceManager.shared.saveContext()
     }
 
 
